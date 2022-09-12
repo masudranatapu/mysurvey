@@ -26,29 +26,31 @@ $(document).ready(function () {
 
     // noUiSlider
     const slider = document.getElementById('electricity-bill-slider');
-    const billSlider = noUiSlider.create(slider, {
-        start: 100,
-        behaviour: 'snap',
-        connect: [true, false],
-        range: {
-            min: 0,
-            max: 1000
-        },
-        tooltips: [wNumb({
-            thousand: ',',
-            decimals: 0,
-            prefix: '$ ',
-        })],
-        pips: {
-            mode: 'range',
-            density: 20,
-        }
-    });
-    const electricityBill = $('[name=electricityBill]');
-    billSlider.on('update', function (values, handle) {
-        electricityBill.val(values[handle]);
-        electricityBill[0]?.dispatchEvent(new Event('input'));
-    });
+    if (slider) {
+        const billSlider = noUiSlider.create(slider, {
+            start: 100,
+            behaviour: 'snap',
+            connect: [true, false],
+            range: {
+                min: 0,
+                max: 1000
+            },
+            tooltips: [wNumb({
+                thousand: ',',
+                decimals: 0,
+                prefix: '$ ',
+            })],
+            pips: {
+                mode: 'range',
+                density: 20,
+            }
+        });
+        const electricityBill = $('[name=electricityBill]');
+        billSlider.on('update', function (values, handle) {
+            electricityBill.val(values[handle]);
+            electricityBill[0]?.dispatchEvent(new Event('input'));
+        });
+    }
 
     // my code ----------------------------------------------------------------------
     $.each($('[data-bg-img]'), (index, item) => {
@@ -71,7 +73,7 @@ $(document).ready(function () {
     });
     
     const form = document.querySelector('.main-form');
-    form.addEventListener('submit', function (e) {
+    form?.addEventListener('submit', function (e) {
         e.preventDefault();
 
         data = sessionStorage.getItem('data');
@@ -87,5 +89,14 @@ $(document).ready(function () {
         data[name] = value;
 
         sessionStorage.setItem('data', JSON.stringify(data));
+    });
+
+    // file input
+    const fileInput = $('.file-input');
+    fileInput.on('change', function (e) {
+        const fileName = e.target.value.split('\\').pop().substring(0, 20) + '...';
+        const label = $(this).find('.file-name');
+
+        $(label).text(fileName);
     });
 });
