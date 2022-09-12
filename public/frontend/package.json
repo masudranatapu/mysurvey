@@ -1,0 +1,17 @@
+{
+    "name": "online-exam",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "tailwindcss -i ./src/tailwind.css -o ./dist/css/tailwind.css --watch",
+        "test": "tailwindcss -i ./src/new.css -o ./dist/css/new.css --watch"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "postcss-import": "^14.0.2",
+        "tailwindcss": "^3.0.23"
+    },
+    "dependencies": {}
+}

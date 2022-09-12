@@ -18,6 +18,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::post('survey', [HomeController::class, 'survey'])->name('survey');
 Route::get('survey-successfull', [HomeController::class, 'surveySuccessfull'])->name('survey.successfull');
+Route::post('send-file', [HomeController::class, 'send_file'])->name('send-file');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     if (Auth::user()->role_id == 1) {

@@ -56,7 +56,7 @@
                                         <img src="{{asset('frontend/img/check.png')}}" alt="" class="w-[120px] mx-auto mb-4">
                                         Yes
                                     </a>
-                                    <a href="" class="text-center">
+                                    <a href="https://solarpanels.sunrun.com/noho/" class="text-center">
                                         <img src="{{asset('frontend/img/times.png')}}" alt="" class="w-[120px] mx-auto mb-4">
                                         No
                                     </a>
@@ -166,7 +166,7 @@
                                 <div class="mb-10 text-4xl">
                                     <i class="fas fa-phone-alt"></i>
                                 </div>
-                                <input type="number" required name="phone" class="block w-full max-w-[360px] mx-auto bg-gray-100 text-gray-700 py-3 px-6 font-semibold text-lg rounded placeholder:text-gray-500 text-center focus:placeholder:opacity-0" placeholder="Enter Phone Number">
+                                <input type="number" required name="phone" class="block w-full max-w-[360px] mx-auto bg-gray-100 text-gray-700 py-3 px-6 font-semibold text-lg rounded placeholder:text-gray-500 text-center focus:placeholder:opacity-0" placeholder="Enter Phone Number" maxlength="13">
                                 <p class="text-xs mt-8 max-w-[600px] mx-auto text-gray-300">By clicking below, I authorize Sunrun to call me and send pre-recorded messages and text messages to me about Sunrun products and services at the telephone number I entered above, using an autodialer, even if I am on a national or state "Do Not Call" list. Message and data rates may apply. Maximum 10 texts per month. Consent for calls & texts is optional. You can opt out anytime. You also agree to our </p>
                                 <button type="submit" class="button button--primary mt-4 relative z-[2]">Submit</button>
                             </div>

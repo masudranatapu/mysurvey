@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+    body {
+        counter-reset: small-cart-counter;
+        @apply font-poppins text-[14px] md:text-[16px];
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-playfair font-medium text-gray-700;
+    }
+
+    /* remove arrow of number input */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        @apply appearance-none m-0;
+    }
+    input[type='number'] {
+        -moz-appearance: textfield;
+    }
+    ::-webkit-scrollbar {
+        @apply w-3 h-1;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+    [data-bg-img] {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    input {
+        outline: none;
+    }
+    .section-padding-t, .section-padding {
+        @apply pt-[100px];
+    }
+    .section-padding-b, .section-padding {
+        @apply pb-[100px];
+    }
+
+    .slick-slide {
+        height: inherit !important;
+    }
+}
+
+@layer components {
+    .container {
+        @apply pl-4 pr-4 mx-auto xl:!max-w-[1140px] 2xl:!max-w-[1140px];
+    }
+    /* buttons */
+    .button { 
+        @apply inline-block border-0 outline-none px-4 py-2 text-[14px] md:text-base font-medium rounded-md transition cursor-pointer;
+    }
+    .button--primary {
+        @apply inline-flex px-6 py-3 text-sm md:text-base bg-primary text-gray-100 font-medium rounded-full transition-all duration-300;
+        @apply hover:bg-primary-dark;
+    }
+    .button--secondary {
+        @apply px-4 md:px-8 py-2 md:py-3 rounded-full border-2 border-primary text-primary bg-transparent font-medium hover:bg-primary hover:border-transparent hover:text-white;
+    }
+    .button--tertiary {
+        @apply px-3 py-2 rounded border-2 text-white bg-primary font-medium border-transparent;
+        @apply hover:border-primary hover:text-slate-800 hover:bg-white;
+    }
+    .button--rounded {
+        @apply w-10 h-10 flex items-center justify-center text-base rounded-full;
+    }
+
+    .button--icon {
+        @apply text-xl h-10 w-10 flex items-center justify-center bg-gray-800 text-gray-100 fixed bottom-4 right-4 z-[1] hover:bg-gray-700;
+    }
+
+
+    /* SECTION HEADING */
+    .section-heading {
+        @apply relative mb-11 max-w-[500px] mx-auto;
+    }
+    .section-heading__title {
+        @apply text-2xl md:text-4xl font-medium text-gray-700;
+    }
+    .section-heading__subtitle {
+        @apply text-base text-primary bg-blue-100 inline-block py-1 px-3 rounded-md mb-3;
+    }
+
+    .slide-number {
+        @apply relative h-16 w-16 mx-auto mb-10 border border-gray-50 rounded-full flex items-center justify-center text-3xl font-bold;
+    }
+    .slide-number::before, .slide-number::after {
+        @apply content-[''] absolute top-1/2 -translate-y-1/2 w-[100px] h-[1px] bg-white;
+    }
+    .slide-number::before {
+        @apply right-[140%];
+    }
+    .slide-number::after {
+        @apply left-[140%];
+    }
+
+    .main-slider {}
+    .main-slider .swiper-slide {}
+    .page-slide--inner {
+        @apply h-[100vh] relative flex items-center justify-center text-center;
+    }
+    .slide-footer {
+        @apply absolute bottom-0 left-0 w-full text-center py-4 text-[10px];
+    }
+
+    #electricity-bill-slider {
+        @apply h-[10px] border-none rounded-xl;
+    }
+    #electricity-bill-slider .noUi-connects {
+        @apply rounded-xl;
+    }
+    #electricity-bill-slider .noUi-connect {
+        @apply bg-secondary;
+    }
+    #electricity-bill-slider .noUi-tooltip {
+        @apply px-3 py-2 text-gray-800 bg-white text-xs font-semibold rounded-lg shadow-lg flex items-center justify-center;
+    }
+    #electricity-bill-slider .noUi-value {
+        @apply text-gray-100 text-lg font-bold;
+    }
+    #electricity-bill-slider .noUi-handle {
+        --size: 30px;
+        @apply h-[var(--size)] w-[var(--size)] bg-secondary rounded-full top-[calc(50%+5px)] -right-[calc(var(--size)/2)] -translate-y-1/2 border-none shadow-xl after:hidden before:hidden;
+    }
+
+    @media (min-width: 768px) {
+        #electricity-bill-slider .noUi-handle {
+            --size: 40px;
+        }
+    }
+}
+
+@layer utilities {}
