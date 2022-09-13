@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +18,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('survey', [HomeController::class, 'survey'])->name('survey');
 Route::get('survey-successfull', [HomeController::class, 'surveySuccessfull'])->name('survey.successfull');
 Route::post('send-file', [HomeController::class, 'send_file'])->name('send-file');
+Route::get('page/{slug}', [HomeController::class, 'pageDetails'])->name('page.details');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     if (Auth::user()->role_id == 1) {
@@ -35,5 +35,6 @@ Route::group(['as'=>'admin.','prefix' => 'admin', 'namespace'=>'App\Http\Control
     Route::post('update-profile', 'SettingController@update_profile')->name('update-profile');
     Route::get('site-setting', 'SettingController@siteSetting')->name('site.setting');
     Route::post('site-setting-update/{id}', 'SettingController@siteSettingUpdate')->name('website.updated');
+    Route::resource('pages', 'PageController');
 
 });

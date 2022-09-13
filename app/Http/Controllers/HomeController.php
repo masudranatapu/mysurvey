@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Survey;
+use App\Models\Page;
 use Carbon\Carbon;
 use Mail;
 use Session;
@@ -103,5 +104,10 @@ class HomeController extends Controller
             $message->from($from_email,$name);
         });
         return redirect()->back();
+    }
+    public function pageDetails($slug)
+    {
+        $page = Page::where('slug', $slug)->first();
+        return view('pagedetails', compact('page'));
     }
 }

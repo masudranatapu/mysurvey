@@ -18,6 +18,12 @@ class SettingTableSeeder extends Seeder
         Setting::insert([
             'title' => 'Title',
             'content' => 'Content',
+            'site_name' => 'Survey',
+            'success_title' => 'Success title',
+            'success_content' => 'Success content',
+            'success_file_content' => 'Success file content',
+            'success_botton_content' => 'Success bottom content',
+            'home_page_terms' => 'Home Page Terms',
         ]);
 
     }

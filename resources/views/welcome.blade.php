@@ -17,6 +17,7 @@
     </head>
     @php
         $setting = App\Models\Setting::latest()->first();
+        $pages = App\Models\Page::where('status', 1)->get();
     @endphp
     <body class="bg-[#203447]">
         <form action="{{route('survey')}}" method="POST">
@@ -27,7 +28,7 @@
                         <div class="page-slide--inner text-gray-100 bg-cover" style="background-image: url({{asset($setting->image)}});">
                             <div class="absolute top-4 left-0 right-0">
                                 <div class="container">
-                                    <svg data-test-id="logo" width="110" fill="none" viewBox="0 0 150 28" xmlns="http://www.w3.org/2000/svg"><title>Sunrun</title><path d="M15.5 13.8c-3.7-1-4.8-1.7-4.8-3.2 0-1 .9-2 3.2-2a7 7 0 0 1 5 1.8c.1.2.3 0 .4 0l2.1-2.2c.1 0 0-.2 0-.4C19.8 5.7 16.8 5 14 5c-4.3 0-7.6 2-7.6 5.7 0 3.8 2.6 5.5 7.4 6.9 2.7.8 4.2 1.4 4.2 3 0 1.4-1.7 2.2-3.8 2.2-2.3 0-4.4-.4-6-2.2h-.5l-2.2 2.5a.4.4 0 0 0 0 .4c2 2.2 5.2 3 8.4 3 4.4 0 8.3-1.8 8.3-6 0-4-2.6-5.5-6.7-6.7m28-8.4H40a.4.4 0 0 0-.4.3V18c0 2.7-1 4.4-4.2 4.4-3.1 0-4.2-1.5-4.2-4.3V5.7c0-.1-.2-.3-.4-.3h-3.6a.4.4 0 0 0-.4.3v13.1c0 5 3.2 7.6 8.5 7.6s8.7-2.7 8.7-7.7v-13a.3.3 0 0 0-.3-.3m14-.3c-5.3 0-8.7 2.7-8.7 7.7v13a.3.3 0 0 0 .3.4h3.7a.4.4 0 0 0 .3-.3V13.4c0-2.7 1-4.4 4.3-4.4 3 0 4.2 1.5 4.2 4.3v12.5c0 .1 0 .4.3.4h3.6a.4.4 0 0 0 .4-.4v-13c0-5-3.2-7.7-8.5-7.7m46.3.3h-3.7a.4.4 0 0 0-.3.3V18c0 2.7-1 4.4-4.3 4.4-3 0-4.2-1.5-4.2-4.3V5.7c0-.1-.1-.3-.3-.3h-3.7a.4.4 0 0 0-.3.3v13.1c0 5 3.2 7.6 8.5 7.6 5.2 0 8.6-2.7 8.6-7.7v-13a.3.3 0 0 0-.3-.3m14-.3c-5.3 0-8.7 2.7-8.7 7.7v13a.3.3 0 0 0 .3.4h3.7a.4.4 0 0 0 .4-.3V13.4c0-2.7 1-4.4 4.2-4.4 3 0 4.2 1.5 4.2 4.3v12.5c0 .1.1.4.4.4h3.6a.4.4 0 0 0 .4-.4v-13c0-5-3.3-7.7-8.5-7.7m-35.2 0h-2C75.4 5 72 7.8 72 12.8v13a.3.3 0 0 0 .2.4H76a.3.3 0 0 0 .3-.3V13.4c0-2.7 1-4.4 4.2-4.4h2a.6.6 0 0 0 .7-.6V5.8a.6.6 0 0 0-.7-.7" fill="#FFF"></path></svg>
+                                    <svg data-test-id="logo" width="110" fill="none" viewBox="0 0 150 28" xmlns="http://www.w3.org/2000/svg"><title>{{$setting->site_name}}</title><path d="M15.5 13.8c-3.7-1-4.8-1.7-4.8-3.2 0-1 .9-2 3.2-2a7 7 0 0 1 5 1.8c.1.2.3 0 .4 0l2.1-2.2c.1 0 0-.2 0-.4C19.8 5.7 16.8 5 14 5c-4.3 0-7.6 2-7.6 5.7 0 3.8 2.6 5.5 7.4 6.9 2.7.8 4.2 1.4 4.2 3 0 1.4-1.7 2.2-3.8 2.2-2.3 0-4.4-.4-6-2.2h-.5l-2.2 2.5a.4.4 0 0 0 0 .4c2 2.2 5.2 3 8.4 3 4.4 0 8.3-1.8 8.3-6 0-4-2.6-5.5-6.7-6.7m28-8.4H40a.4.4 0 0 0-.4.3V18c0 2.7-1 4.4-4.2 4.4-3.1 0-4.2-1.5-4.2-4.3V5.7c0-.1-.2-.3-.4-.3h-3.6a.4.4 0 0 0-.4.3v13.1c0 5 3.2 7.6 8.5 7.6s8.7-2.7 8.7-7.7v-13a.3.3 0 0 0-.3-.3m14-.3c-5.3 0-8.7 2.7-8.7 7.7v13a.3.3 0 0 0 .3.4h3.7a.4.4 0 0 0 .3-.3V13.4c0-2.7 1-4.4 4.3-4.4 3 0 4.2 1.5 4.2 4.3v12.5c0 .1 0 .4.3.4h3.6a.4.4 0 0 0 .4-.4v-13c0-5-3.2-7.7-8.5-7.7m46.3.3h-3.7a.4.4 0 0 0-.3.3V18c0 2.7-1 4.4-4.3 4.4-3 0-4.2-1.5-4.2-4.3V5.7c0-.1-.1-.3-.3-.3h-3.7a.4.4 0 0 0-.3.3v13.1c0 5 3.2 7.6 8.5 7.6 5.2 0 8.6-2.7 8.6-7.7v-13a.3.3 0 0 0-.3-.3m14-.3c-5.3 0-8.7 2.7-8.7 7.7v13a.3.3 0 0 0 .3.4h3.7a.4.4 0 0 0 .4-.3V13.4c0-2.7 1-4.4 4.2-4.4 3 0 4.2 1.5 4.2 4.3v12.5c0 .1.1.4.4.4h3.6a.4.4 0 0 0 .4-.4v-13c0-5-3.3-7.7-8.5-7.7m-35.2 0h-2C75.4 5 72 7.8 72 12.8v13a.3.3 0 0 0 .2.4H76a.3.3 0 0 0 .3-.3V13.4c0-2.7 1-4.4 4.2-4.4h2a.6.6 0 0 0 .7-.6V5.8a.6.6 0 0 0-.7-.7" fill="#FFF"></path></svg>
                                 </div>
                             </div>
                             <div class="container">
@@ -36,12 +37,11 @@
                                 <a href="javascript:;" class="main-slider-next button button--primary">Calculate Your Savings</a>
                             </div>
                             <div class="slide-footer">
-                                ©<script>document.write(new Date().getFullYear())</script>2022 Sunrun. All rights reserved. <br>
+                                © 2022 {{$setting->site_name}} . All rights reserved. <br>
                                 <div class="flex items-center justify-center flex-wrap gap-y-2 text-center divide-x mt-2">
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">State Contractor License Information</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Privacy Policy</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Do Not Sell My Info</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Terms</a>
+                                    @foreach($pages as $page)
+                                        <a href="{{route('page.details', $page->slug)}}" class="px-2 leading-none whitespace-nowrap">{{ $page->name }}</a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -63,12 +63,11 @@
                                 </div>
                             </div>
                             <div class="slide-footer">
-                                ©<script>document.write(new Date().getFullYear())</script>2022 Sunrun. All rights reserved. <br>
+                                © 2022 {{$setting->site_name}} . All rights reserved. <br>
                                 <div class="flex items-center justify-center flex-wrap gap-y-2 text-center divide-x mt-2">
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">State Contractor License Information</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Privacy Policy</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Do Not Sell My Info</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Terms</a>
+                                    @foreach($pages as $page)
+                                        <a href="{{route('page.details', $page->slug)}}" class="px-2 leading-none whitespace-nowrap">{{ $page->name }}</a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -85,12 +84,11 @@
                                 <button type="button" id="checkZipCode" class="main-slider-next button button--primary mt-4 relative z-[2]" data->Next</button>
                             </div>
                             <div class="slide-footer">
-                                ©<script>document.write(new Date().getFullYear())</script>2022 Sunrun. All rights reserved. <br>
+                                © 2022 {{$setting->site_name}} . All rights reserved. <br>
                                 <div class="flex items-center justify-center flex-wrap gap-y-2 text-center divide-x mt-2">
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">State Contractor License Information</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Privacy Policy</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Do Not Sell My Info</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Terms</a>
+                                    @foreach($pages as $page)
+                                        <a href="{{route('page.details', $page->slug)}}" class="px-2 leading-none whitespace-nowrap">{{ $page->name }}</a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -105,12 +103,11 @@
                                 <button type="button" class="main-slider-next button button--primary mt-8 relative z-[2]">Next</button>
                             </div>
                             <div class="slide-footer">
-                                ©<script>document.write(new Date().getFullYear())</script>2022 Sunrun. All rights reserved. <br>
+                                © 2022 {{$setting->site_name}} . All rights reserved. <br>
                                 <div class="flex items-center justify-center flex-wrap gap-y-2 text-center divide-x mt-2">
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">State Contractor License Information</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Privacy Policy</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Do Not Sell My Info</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Terms</a>
+                                    @foreach($pages as $page)
+                                        <a href="{{route('page.details', $page->slug)}}" class="px-2 leading-none whitespace-nowrap">{{ $page->name }}</a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -127,12 +124,11 @@
                                 <button type="button" id="emailCheckButton" class="main-slider-next button button--primary mt-4 relative z-[2]">Next</button>
                             </div>
                             <div class="slide-footer">
-                                ©<script>document.write(new Date().getFullYear())</script>2022 Sunrun. All rights reserved. <br>
+                                © 2022 {{$setting->site_name}} . All rights reserved. <br>
                                 <div class="flex items-center justify-center flex-wrap gap-y-2 text-center divide-x mt-2">
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">State Contractor License Information</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Privacy Policy</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Do Not Sell My Info</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Terms</a>
+                                    @foreach($pages as $page)
+                                        <a href="{{route('page.details', $page->slug)}}" class="px-2 leading-none whitespace-nowrap">{{ $page->name }}</a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -148,12 +144,11 @@
                                 <button type="button" id="nameCheck" class="main-slider-next button button--primary mt-4 relative z-[2]">Next</button>
                             </div>
                             <div class="slide-footer">
-                                ©<script>document.write(new Date().getFullYear())</script>2022 Sunrun. All rights reserved. <br>
+                                © 2022 {{$setting->site_name}} . All rights reserved. <br>
                                 <div class="flex items-center justify-center flex-wrap gap-y-2 text-center divide-x mt-2">
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">State Contractor License Information</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Privacy Policy</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Do Not Sell My Info</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Terms</a>
+                                    @foreach($pages as $page)
+                                        <a href="{{route('page.details', $page->slug)}}" class="px-2 leading-none whitespace-nowrap">{{ $page->name }}</a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -167,18 +162,19 @@
                                     <i class="fas fa-phone-alt"></i>
                                 </div>
                                 <input type="number" required name="phone" class="block w-full max-w-[360px] mx-auto bg-gray-100 text-gray-700 py-3 px-6 font-semibold text-lg rounded placeholder:text-gray-500 text-center focus:placeholder:opacity-0" placeholder="Enter Phone Number" maxlength="13">
-                                <p class="text-xs mt-8 max-w-[600px] mx-auto text-gray-300">By clicking below, I authorize Sunrun to call me and send pre-recorded messages and text messages to me about Sunrun products and services at the telephone number I entered above, using an autodialer, even if I am on a national or state "Do Not Call" list. Message and data rates may apply. Maximum 10 texts per month. Consent for calls & texts is optional. You can opt out anytime. You also agree to our </p>
+                                <p class="text-xs mt-8 max-w-[600px] mx-auto text-gray-300">
+                                    {{$setting->home_page_terms}}
+                                </p>
                                 <button type="submit" class="button button--primary mt-4 relative z-[2]">Submit</button>
                             </div>
         
                             <div class="slide-footer">
-                                ©<script>document.write(new Date().getFullYear())</script>2022 Sunrun. All rights reserved. <br>
+                                © 2022 {{$setting->site_name}} . All rights reserved. <br>
         
                                 <div class="flex items-center justify-center flex-wrap gap-y-2 text-center divide-x mt-2">
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">State Contractor License Information</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Privacy Policy</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Do Not Sell My Info</a>
-                                    <a href="javascript:;" target="_blank" class="px-2 leading-none whitespace-nowrap">Terms</a>
+                                    @foreach($pages as $page)
+                                        <a href="{{route('page.details', $page->slug)}}" class="px-2 leading-none whitespace-nowrap">{{ $page->name }}</a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

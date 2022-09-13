@@ -32,6 +32,29 @@
                         </p>
                     </a>
                 </li> 
+                <li class="nav-item {{ request()->is('admin/pages') || (request()->is('admin/pages/create')) ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                            Page
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item {{ (request()->is('admin/pages/create')) ? 'active' : '' }}">
+                            <a href="{{route('admin.pages.create')}}" class="nav-link {{ (request()->is('admin/pages/create')) ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add</p>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ (request()->is('admin/pages')) ? 'active' : '' }}">
+                            <a href="{{route('admin.pages.index')}}" class="nav-link {{ (request()->is('admin/pages')) ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Manage</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
                 <li class="nav-item {{ request()->is('admin/profile') || (request()->is('admin/site-setting')) ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>

@@ -31,15 +31,21 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group row">
+                                        <label class="col-md-3 text-right">Site Name</label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="site_name" class="form-control" value="{{$setting->site_name}}" placeholder="Site Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
                                         <label class="col-md-3 text-right">Title</label>
                                         <div class="col-md-9">
-                                            <textarea class="form-control" name="title" cols="30" rows="2">{{$setting->title}}</textarea>
+                                            <textarea class="form-control" name="title" cols="30" rows="2" placeholder="Title">{{$setting->title}}</textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-md-3 text-right">Content</label>
                                         <div class="col-md-9">
-                                            <textarea class="form-control" name="content" cols="30" rows="2">{{$setting->content}}</textarea>
+                                            <textarea class="form-control" name="content" cols="30" rows="2" placeholder="Content">{{$setting->content}}</textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -57,6 +63,36 @@
                                         <label class="col-md-3 col-form-label text-right">Current Background Image</label>
                                         <div class="col-md-9">
                                             <img width="100" height="100" src="@if($setting->image) {{asset($setting->image)}} @else {{ asset('demomedia/demo.jpg') }}@endif" id="image">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 text-right">Success Page Title</label>
+                                        <div class="col-md-9">
+                                            <textarea class="form-control" name="success_title" cols="30" rows="2"  placeholder="Success Page Title">{{$setting->success_title}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 text-right">Success Page Content</label>
+                                        <div class="col-md-9">
+                                            <textarea class="form-control" name="success_content" cols="30" rows="2"  placeholder="Success Page Content">{{$setting->success_content}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 text-right">Success file Title</label>
+                                        <div class="col-md-9">
+                                            <textarea class="form-control" name="success_file_content" cols="30" rows="2"  placeholder="Success file Title">{{$setting->success_file_content}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 text-right">Success Bottom Content</label>
+                                        <div class="col-md-9">
+                                            <textarea class="form-control" name="success_botton_content" cols="30" rows="2"  placeholder="Success Bottom Content">{{$setting->success_botton_content}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 text-right">Home Page Terms</label>
+                                        <div class="col-md-9">
+                                            <textarea class="form-control" name="home_page_terms" cols="30" rows="3"  placeholder="Home Page Terms">{{$setting->home_page_terms}}</textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row">

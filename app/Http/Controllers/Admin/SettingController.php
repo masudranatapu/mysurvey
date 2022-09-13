@@ -78,6 +78,12 @@ class SettingController extends Controller
         Setting::findOrFail($id)->update([
             'title' => $request->title,
             'content' => $request->content,
+            'site_name' => $request->site_name,
+            'success_title' => $request->success_title,
+            'success_content' => $request->success_content,
+            'success_file_content' => $request->success_file_content,
+            'success_botton_content' => $request->success_botton_content,
+            'home_page_terms' => $request->home_page_terms,
             'image' => $image_url,
         ]);
 

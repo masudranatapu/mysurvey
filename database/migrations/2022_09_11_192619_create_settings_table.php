@@ -18,6 +18,12 @@ class CreateSettingsTable extends Migration
             $table->string('title')->nullable();
             $table->string('content')->nullable();
             $table->string('image')->nullable();
+            $table->string('site_name')->nullable();
+            $table->text('success_title')->nullable();
+            $table->text('success_content')->nullable();
+            $table->text('success_file_content')->nullable();
+            $table->text('success_botton_content')->nullable();
+            $table->text('home_page_terms');
             $table->timestamps();
         });
     }
