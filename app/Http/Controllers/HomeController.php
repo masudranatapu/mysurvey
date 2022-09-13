@@ -33,10 +33,9 @@ class HomeController extends Controller
             'lastname' => 'required',
             'phone' => 'required',
         ]);
-
         $survey_user = new Survey();
         $survey_user->zipcode = $request->zipcode;
-        $survey_user->electricitybill = $request->electricitybill;
+        $survey_user->electricitybill = $request->electricityBill;
         $survey_user->email = $request->email;
         $survey_user->firstname = $request->firstname;
         $survey_user->lastname = $request->lastname;
