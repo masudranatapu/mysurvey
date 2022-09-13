@@ -6,12 +6,24 @@ module.exports = {
         './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        './src/**/*.css',
+        './frontend/**/*.js',
+        './*.html',
     ],
 
     theme: {
+        screens: {
+            'xs': '475px',
+            ...defaultTheme.screens,
+        },
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                "poppins": ["Poppins", "sans-serif"],
+            },
+            colors: {
+                'primary': '#21a7d0',
+                "secondary": "#6AC99D",
             },
         },
     },
@@ -22,5 +34,9 @@ module.exports = {
         },
     },
 
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+    plugins: [
+        // require('@tailwindcss/forms'),
+        // require('@tailwindcss/typography'),
+        require('@tailwindcss/line-clamp')
+    ],
 };

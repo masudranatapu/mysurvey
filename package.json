@@ -1,6 +1,7 @@
 {
     "private": true,
     "scripts": {
+        "tailwind": "tailwindcss -i ./public/frontend/src/tailwind.css -o ./public/frontend/css/tailwind.css --watch",
         "dev": "npm run development",
         "development": "mix",
         "watch": "mix watch",
@@ -10,14 +11,13 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "@tailwindcss/forms": "^0.3.1",
-        "@tailwindcss/typography": "^0.4.0",
         "alpinejs": "^2.7.3",
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
-        "postcss-import": "^14.0.1",
-        "tailwindcss": "^2.0.1"
+        "tailwindcss": "^2.2.19"
+    },
+    "dependencies": {
+        "@tailwindcss/line-clamp": "^0.4.2"
     }
 }

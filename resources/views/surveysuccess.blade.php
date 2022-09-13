@@ -36,16 +36,14 @@
             <div class="py-10">
                 <h3 style="padding: 20px">Sending a image file or send  manual.</h3>
                 <div class="container">
-                    <form action="{{route('send-file')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('send-file')}}" method="post" enctype="multipart/form-data" class="flex gap-4">
                         @csrf
                         <label class="file-input max-w-[400px] mx-auto mb-7 flex border rounded overflow-hidden focus:outline-2 focus:outline-secondary ring-primary/20 cursor-pointer">
                             <input type="file" id="file" name="image" aria-label="File browser example" class="hidden">
                             <span class="file-name py-3 px-6 flex-grow text-left">Choose A file</span>
                             <span class="file-handle-button bg-secondary text-gray-100 border-l py-3 px-6">Browse</span>
                         </label>
-                        <label class="file-input max-w-[400px] mx-auto mb-7 flex rounded overflow-hidden ring-primary/20">
-                            <button class="file-handle-button bg-secondary text-gray-100 py-3 px-6">Submit</button>
-                        </label>
+                        <button class="file-handle-button bg-secondary text-gray-100 py-3 px-6">Submit</button>
                     </form>
                     <h4 class="text-2xl font-bold mb-7">The 7 Steps to Going Solar</h4>
                     <p class="max-w-[800px] mx-auto mb-10">We know going solar can be complicated. We are here as your expert guide every step of the way. With our customers, we are creating a planet run by the sun.</p>
