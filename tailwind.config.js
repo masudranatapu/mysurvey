@@ -20,10 +20,12 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
                 "poppins": ["Poppins", "sans-serif"],
+                "playfair": ["Playfair Display", "serif"],
             },
             colors: {
-                'primary': '#21a7d0',
-                "secondary": "#6AC99D",
+                primary: '#00b085',
+                'primary-dark': '#157245',
+                secondary: '#269ccc',
             },
         },
     },

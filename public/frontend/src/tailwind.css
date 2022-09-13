@@ -1,13 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
     html {
         @apply scroll-smooth;
     }
     body {
-        counter-reset: small-cart-counter;
-        @apply font-poppins text-[14px] md: text-[16px];
+        counter-reset:small-cart-counter;
+        @apply font-poppins text-[14px] md:text-[16px];
     }
     h1,
     h2,
@@ -23,25 +24,25 @@
         @apply appearance-none m-0;
     }
     input[type='number'] {
-        -moz-appearance: textfield;
+        -moz-appearance:textfield;
     }
      ::-webkit-scrollbar {
         @apply w-3 h-1;
     }
      ::-webkit-scrollbar-track {
-        background-color: #f1f1f1;
+        background-color:#f1f1f1;
     }
      ::-webkit-scrollbar-thumb {
-        background-color: #ccc;
-        border-radius: 5px;
+        background-color:#ccc;
+        border-radius:5px;
     }
     [data-bg-img] {
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        background-repeat:no-repeat;
+        background-position:center;
+        background-size:cover;
     }
     input {
-        outline: none;
+        outline:none;
     }
     .section-padding-t,
     .section-padding {
@@ -52,41 +53,41 @@
         @apply pb-[100px];
     }
     .slick-slide {
-        height: inherit !important;
+        height:inherit !important;
     }
 }
 
 @layer components {
     .container {
-        @apply pl-4 pr-4 mx-auto xl: !max-w-[1140px] 2xl: !max-w-[1140px];
+        @apply pl-4 pr-4 mx-auto xl:!max-w-[1140px] 2xl:!max-w-[1140px];
     }
     /* buttons */
     .button {
-        @apply inline-block border-0 outline-none px-4 py-2 text-[14px] md: text-base font-medium rounded-md transition cursor-pointer;
+        @apply inline-block border-0 outline-none px-4 py-2 text-[14px] md:text-base font-medium rounded-md transition cursor-pointer;
     }
     .button--primary {
-        @apply inline-flex px-6 py-3 text-sm md: text-base bg-primary text-gray-100 font-medium rounded-full transition-all duration-300;
-        @apply hover: bg-primary-dark;
+        @apply inline-flex px-6 py-3 text-sm md:text-base bg-primary text-gray-100 font-medium rounded-full transition-all duration-300;
+        @apply hover:bg-primary-dark;
     }
     .button--secondary {
-        @apply px-4 md: px-8 py-2 md: py-3 rounded-full border-2 border-primary text-primary bg-transparent font-medium hover: bg-primary hover: border-transparent hover: text-white;
+        @apply px-4 md:px-8 py-2 md:py-3 rounded-full border-2 border-primary text-primary bg-transparent font-medium hover:bg-primary hover:border-transparent hover:text-white;
     }
     .button--tertiary {
         @apply px-3 py-2 rounded border-2 text-white bg-primary font-medium border-transparent;
-        @apply hover: border-primary hover: text-slate-800 hover: bg-white;
+        @apply hover:border-primary hover:text-slate-800 hover:bg-white;
     }
     .button--rounded {
         @apply w-10 h-10 flex items-center justify-center text-base rounded-full;
     }
     .button--icon {
-        @apply text-xl h-10 w-10 flex items-center justify-center bg-gray-800 text-gray-100 fixed bottom-4 right-4 z-[1] hover: bg-gray-700;
+        @apply text-xl h-10 w-10 flex items-center justify-center bg-gray-800 text-gray-100 fixed bottom-4 right-4 z-[1] hover:bg-gray-700;
     }
     /* SECTION HEADING */
     .section-heading {
         @apply relative mb-11 max-w-[500px] mx-auto;
     }
     .section-heading__title {
-        @apply text-2xl md: text-4xl font-medium text-gray-700;
+        @apply text-2xl md:text-4xl font-medium text-gray-700;
     }
     .section-heading__subtitle {
         @apply text-base text-primary bg-blue-100 inline-block py-1 px-3 rounded-md mb-3;
@@ -128,12 +129,12 @@
         @apply text-gray-100 text-lg font-bold;
     }
     #electricity-bill-slider .noUi-handle {
-        --size: 30px;
-        @apply h-[var(--size)] w-[var(--size)] bg-secondary rounded-full top-[calc(50%+5px)] -right-[calc(var(--size)/2)] -translate-y-1/2 border-none shadow-xl after: hidden before: hidden;
+        --size:30px;
+        @apply h-[var(--size)] w-[var(--size)] bg-secondary rounded-full top-[calc(50%+5px)] -right-[calc(var(--size)/2)] -translate-y-1/2 border-none shadow-xl after:hidden before:hidden;
     }
-    @media (min-width: 768px) {
+    @media (min-width:768px) {
         #electricity-bill-slider .noUi-handle {
-            --size: 40px;
+            --size:40px;
         }
     }
 }
