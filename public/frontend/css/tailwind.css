@@ -1787,6 +1787,11 @@ input {
   line-height: 1.75rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .font-semibold {
   font-weight: 600;
 }
@@ -1829,6 +1834,22 @@ input {
 
 .tracking-widest {
   letter-spacing: 0.1em;
+}
+
+.tracking-\[1px\] {
+  letter-spacing: 1px;
+}
+
+.tracking-\[2px\] {
+  letter-spacing: 2px;
+}
+
+.tracking-\[3px\] {
+  letter-spacing: 3px;
+}
+
+.tracking-\[4px\] {
+  letter-spacing: 4px;
 }
 
 .text-gray-800 {
