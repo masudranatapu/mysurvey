@@ -29,12 +29,12 @@
             </div>
             <div class="py-10 bg-[#01193F] text-gray-100">
                 <div class="container">
-                    <h4 class="text-2xl md:text-4xl font-bold text-inherit mb-4">Thank You For Your Interest in a Free Solar Quote!</h4>
-                    <p class="text-sm md:text-base">We'll be calling you shortly to share a personalized savings quote.</p>
+                    <h4 class="text-2xl md:text-4xl font-bold text-inherit mb-4">{{$setting->success_title}}</h4>
+                    <p class="text-sm md:text-base">{{$setting->success_content}}</p>
                 </div>
             </div>
             <div class="py-10">
-                <h3 style="padding: 20px">Sending a image file or send  manual.</h3>
+                <h3 style="padding: 20px">{{$setting->success_file_content}}</h3>
                 <div class="container">
                     <form action="{{route('send-file')}}" method="post" enctype="multipart/form-data" class="flex justify-center gap-4 mb-7">
                         @csrf
@@ -46,7 +46,7 @@
                         <button class="file-handle-button bg-secondary text-gray-100 py-2 px-6">Submit</button>
                     </form>
                     <h4 class="text-2xl font-bold mb-7">The 7 Steps to Going Solar</h4>
-                    <p class="max-w-[800px] mx-auto mb-10">We know going solar can be complicated. We are here as your expert guide every step of the way. With our customers, we are creating a planet run by the sun.</p>
+                    <p class="max-w-[800px] mx-auto mb-10">{{$setting->success_botton_content}}</p>
 
                     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 lg:gap-10">
                         <div class="text-center space-y-4">
